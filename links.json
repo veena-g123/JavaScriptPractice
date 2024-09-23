@@ -1,0 +1,18 @@
+{
+    "java": [
+      "https://docs.oracle.com/en/java/",
+      "https://www.javatpoint.com/java-tutorial",
+      "https://www.baeldung.com/java"
+    ],
+    "sql": [
+      "https://dev.mysql.com/doc/",
+      "https://www.w3schools.com/sql/",
+      "https://sqlbolt.com/"
+    ],
+    "js": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "https://www.javascript.com/learn",
+      "https://eloquentjavascript.net/"
+    ]
+  }
+  
