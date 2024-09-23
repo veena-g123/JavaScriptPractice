@@ -2,7 +2,7 @@ function loadLinks(language) {
     const linkContainer = document.getElementById('linkContainer');
     linkContainer.innerHTML = '';  // Clear existing links
     
-    fetch('links.json?timestamp=' + new Date().getTime()')  // Fetching from the external JSON file
+    fetch('links.json?timestamp=' + new Date().getTime())  // Fetching from the external JSON file
       .then(response => response.json())
       .then(data => {
           const languageLinks = data[language];
