@@ -21,6 +21,7 @@ jobs:
       - name: Commit changes
         run: |
           git config --global user.name ${{ github.event.issue.user.login }}
+          git config --global user.email "${{ github.event.issue.user.email }}"
           git add links.txt
           git commit -m "Auto-update links from issue #${{ github.event.issue.number }}"
           git push origin master
