@@ -1,0 +1,28 @@
+name: Auto-Update Links from Issues
+
+on:
+  issues:
+    types: [opened, edited]  # Trigger when an issue is created or edited
+
+jobs:
+  update_file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Extract link from issue
+        id: extract_link
+        run: |
+          echo "Issue Body: ${{ github.event.issue.body }}"
+          echo "${{ github.event.issue.body }}" >> links.txt
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add links.txt
+          git commit -m "Auto-update links from issue #${{ github.event.issue.number }}"
+          git push origin main
+       
